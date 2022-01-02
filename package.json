@@ -11,7 +11,7 @@
     "postinstall": "tsc",
     "dev": "nodemon src/server.ts",
     "start": "node src/server.ts",
-    "build": "tsc --project . && cp .env1 build",
+    "build": "tsc --project .",
     "production": "npm run build && node ./build/server.js",
     "deploy": "git add . && git commit -m initial && git push heroku main"
   },
