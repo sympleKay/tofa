@@ -7,7 +7,7 @@
     "test": "mocha -r ts-node/register src/test/test.ts",
     "dev": "nodemon src/server.ts",
     "start": "node src/server.ts",
-    "build": "tsc --project .",
+    "build": "tsc --project . && cp .env build",
     "production": "npm run build && node ./build/server.js"
   },
   "author": "Oluwakayode Fafiyebi <oluwakayodefafiyebi95@gmail.com>",
