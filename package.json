@@ -8,10 +8,12 @@
   },
   "scripts": {
     "test": "mocha -r ts-node/register src/test/test.ts",
+    "postinstall": "tsc",
     "dev": "nodemon src/server.ts",
     "start": "node src/server.ts",
     "build": "tsc --project . && cp .env1 build",
-    "production": "npm run build && node ./build/server.js"
+    "production": "npm run build && node ./build/server.js",
+    "deploy": "git add . && git commit -m initial && git push heroku main"
   },
   "author": "Oluwakayode Fafiyebi <oluwakayodefafiyebi95@gmail.com>",
   "license": "ISC",
