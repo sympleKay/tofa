@@ -64,6 +64,14 @@ export const getPhotoByQuery = async (req: any, res: ServerResponse) => {
     }
   }
 
+  if (limit !== "null" && orderBy !== "null") {
+    const photos = await Photo.find()
+      .limit(100)
+      .sort({ title: orderBy.toLowerCase() });
+    res.writeHead(200, { "Content-Type": "application/json" });
+    return res.end(JSON.stringify(photos));
+  }
+
   const getPhotosByFilter = await Photo.find()
     .limit(parseInt(limit))
     .skip(parseInt(page) * parseInt(limit) - parseInt(limit))
